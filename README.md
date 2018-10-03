@@ -11,3 +11,6 @@ Technologies and techniques :
 - Butterknife to bind data
 - SQLite for store favorite news
 - Recyclerviewer for list
+
+Note : 
+to make foavorite news click Long 
