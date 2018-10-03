@@ -74,8 +74,6 @@ public class NewsItemsAdapter extends RecyclerView.Adapter<NewsItemsAdapter.View
                     Log.d(TAG, "Element " + getAdapterPosition() + " clicked.");
                     if(mNewsItemsAdapterListener != null){
                         Article clickedItem = DataSet.get(getAdapterPosition());
-                       // mNewsItemsAdapterListener.onItemClickedLong(getAdapterPosition(),clickedItem);
-                        //image_favorite_icon_yellow.setVisibility(View.VISIBLE);
                         if(image_favorite_icon_yellow.getVisibility() == View.VISIBLE)
                         {
                             mNewsItemsAdapterListener.onItemClickedLong(getAdapterPosition(),clickedItem,false);

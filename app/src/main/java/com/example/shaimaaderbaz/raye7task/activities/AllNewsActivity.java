@@ -48,7 +48,6 @@ public class AllNewsActivity extends AppCompatActivity implements AllNewsView ,N
         mContext=this;
         mActivity=this;
         ButterKnife.bind(this);
-        //allArticles =new ArrayList<>();
         presenter = new AllNewsPresenterImp(this);
         presenter.retrieveNewsDataFromServer();
     }
@@ -56,8 +55,6 @@ public class AllNewsActivity extends AppCompatActivity implements AllNewsView ,N
     @Override
     public  void showNewsInfo(List<Article> allArticlesData)
     {
-        //allArticles = allArticlesData;
-        String s="";
         recyclerViewItemNews.setLayoutManager(new LinearLayoutManager(mContext));
         newsItemsAdapter = new NewsItemsAdapter(mContext,allArticlesData,this);
         recyclerViewItemNews.setAdapter(newsItemsAdapter);
@@ -82,7 +79,6 @@ public class AllNewsActivity extends AppCompatActivity implements AllNewsView ,N
         {
            // presenter.d(clickedItem, mContext);
         }
-       // image_favorite_icon_yellow.setVisibility(View.VISIBLE);
         Toast.makeText(this, "Added to your Favorite News", Toast.LENGTH_SHORT)
                 .show();
     }
