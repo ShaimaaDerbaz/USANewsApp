@@ -43,5 +43,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_top_margin"
         android:id="@+id/image_view_news_image"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimaryDark"></LinearLayout>
 
 </LinearLayout>

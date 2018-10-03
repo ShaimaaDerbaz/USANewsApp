@@ -14,10 +14,7 @@ import retrofit2.http.GET;
 
 public interface OrthoAPI {
 
-    //@POST("/v2/top-headlines?country=us&sortBy=published&apiKey=e313174072f94a43812840d8c906c028")
-    //Call<ResponseBody> GetAllTodayNews(@Body PatientItem patientItem);
-
-    @GET("/v2/everything?q=Google&sources=usa-today&language=en&sortBy=publishedAt&apiKey=e313174072f94a43812840d8c906c028")
+    @GET("/v2/everything?q=Google&sources=usa-today&language=en&page=1&sortBy=publishedAt&apiKey=e313174072f94a43812840d8c906c028")
     Call<AllTodayNewsData> getAllTodayNews();
 
 
