@@ -1,5 +1,7 @@
 package com.example.shaimaaderbaz.raye7task.views;
 
+import android.database.Cursor;
+
 import com.example.shaimaaderbaz.raye7task.models.AllTodayNewsData;
 import com.example.shaimaaderbaz.raye7task.models.Article;
 
@@ -11,6 +13,6 @@ import java.util.List;
 
 public interface AllNewsView {
     void showNewsInfo(List<Article> allArticles);
-
+    void showNewsFavoriteInfo(Cursor c);
 
 }

@@ -22,7 +22,7 @@ public final class FavoriteContract {
         public static final String COLUMN_IMAGE_UrL="imageurl";
 
 
-        public static final String CONTENT_AUTHORITY = "com.example.shaimaaderbaz.favortie";
+        public static final String CONTENT_AUTHORITY = "com.example.shaimaaderbaz.raye7task";
         public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);//the basic to use and mke append to it
         public static final String PATH_PRODUCTS = "favorties";
         public static final Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_PRODUCTS);

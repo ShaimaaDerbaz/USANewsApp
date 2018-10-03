@@ -19,8 +19,8 @@ public class FavoriteProvider extends ContentProvider {
     private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
     static {
 
-        sUriMatcher.addURI("com.example.shaimaaderbaz.favortie", "favorties", 100);
-        sUriMatcher.addURI("com.example.shaimaaderbaz.favortie", "favorties/#", 101);
+        sUriMatcher.addURI("com.example.shaimaaderbaz.raye7task", "favorites", 100);
+        sUriMatcher.addURI("com.example.shaimaaderbaz.raye7task", "favorites/#", 101);
     }
     @Override
     public boolean onCreate()

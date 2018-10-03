@@ -1,5 +1,7 @@
 package com.example.shaimaaderbaz.raye7task.presenters;
 
+import android.content.Context;
+
 import com.example.shaimaaderbaz.raye7task.models.Article;
 
 /**
@@ -9,8 +11,8 @@ import com.example.shaimaaderbaz.raye7task.models.Article;
 public interface AllNewsPresenter {
 
     void retrieveNewsDataFromServer();
-    void retrieveFavoriteNewsDataFromDatabase();
-    void addNewsFavorieDataToDatabase(Article article);
+    void retrieveFavoriteNewsDataFromDatabase(Context mContext);
+    void addNewsFavorieDataToDatabase(Article article ,Context mContext);
 
 }
 
