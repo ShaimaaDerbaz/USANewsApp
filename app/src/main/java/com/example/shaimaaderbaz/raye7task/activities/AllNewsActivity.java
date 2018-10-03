@@ -73,9 +73,15 @@ public class AllNewsActivity extends AppCompatActivity implements AllNewsView ,N
 
     }
     @Override
-    public void onItemClickedLong(int adapterPos,Article clickedItem)
+    public void onItemClickedLong(int adapterPos,Article clickedItem,boolean flage)
     {
-        presenter.addNewsFavorieDataToDatabase(clickedItem,mContext);
+        if(flage==true) {
+            presenter.addNewsFavorieDataToDatabase(clickedItem, mContext);
+        }
+        else
+        {
+           // presenter.d(clickedItem, mContext);
+        }
        // image_favorite_icon_yellow.setVisibility(View.VISIBLE);
         Toast.makeText(this, "Added to your Favorite News", Toast.LENGTH_SHORT)
                 .show();

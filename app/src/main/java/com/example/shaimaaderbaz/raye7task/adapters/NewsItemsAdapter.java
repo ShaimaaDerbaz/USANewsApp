@@ -31,7 +31,7 @@ public class NewsItemsAdapter extends RecyclerView.Adapter<NewsItemsAdapter.View
     private NewsItemsAdapterListener mNewsItemsAdapterListener;
     public interface NewsItemsAdapterListener {
         void onItemClicked(int id,Article clickedItem );
-        void onItemClickedLong(int adapterPos,Article clickedItem);
+        void onItemClickedLong(int adapterPos,Article clickedItem,boolean flage);
 
     }
 
@@ -74,8 +74,18 @@ public class NewsItemsAdapter extends RecyclerView.Adapter<NewsItemsAdapter.View
                     Log.d(TAG, "Element " + getAdapterPosition() + " clicked.");
                     if(mNewsItemsAdapterListener != null){
                         Article clickedItem = DataSet.get(getAdapterPosition());
-                        mNewsItemsAdapterListener.onItemClickedLong(getAdapterPosition(),clickedItem);
-                        image_favorite_icon_yellow.setVisibility(View.VISIBLE);
+                       // mNewsItemsAdapterListener.onItemClickedLong(getAdapterPosition(),clickedItem);
+                        //image_favorite_icon_yellow.setVisibility(View.VISIBLE);
+                        if(image_favorite_icon_yellow.getVisibility() == View.VISIBLE)
+                        {
+                            mNewsItemsAdapterListener.onItemClickedLong(getAdapterPosition(),clickedItem,false);
+                            image_favorite_icon_yellow.setVisibility(View.INVISIBLE);
+                        }
+                        else
+                        {
+                            mNewsItemsAdapterListener.onItemClickedLong(getAdapterPosition(),clickedItem,true);
+                            image_favorite_icon_yellow.setVisibility(View.VISIBLE);
+                        }
 
                     }
                     return false;
@@ -131,12 +141,12 @@ public class NewsItemsAdapter extends RecyclerView.Adapter<NewsItemsAdapter.View
             String imageUrl=DataSet.get(position).getUrlToImage();
             if(imageUrl!=null)
             {
-                Picasso.with(context).load(imageUrl).resize(120,120).into(holder.news_image);
+                Picasso.with(context).load(imageUrl).resize(600,900).into(holder.news_image);
             }
             else
             {
                 String  placholderImage="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552";
-                Picasso.with(context).load(placholderImage).resize(360,360).into(holder.news_image);
+                Picasso.with(context).load(placholderImage).resize(600,900).into(holder.news_image);
 
             }
 
