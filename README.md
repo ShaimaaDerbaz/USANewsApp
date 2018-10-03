@@ -1,6 +1,10 @@
-"# USANewsApp" 
+"# USANewsApp"
+
+ 
 Design Pattern :
+
 - MVP
+
 Technologies and techniques :
 - Retrofit 2 with Gson for API and Network
 - Picasso for Images
