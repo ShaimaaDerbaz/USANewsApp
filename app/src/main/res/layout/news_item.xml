@@ -3,21 +3,32 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:layout_marginTop="@dimen/activity_top_margin"
-        android:orientation="horizontal"
-        android:background="@drawable/edittextstyl">
-    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorGray"
-        android:text="Test"
-        android:gravity="left"
-        android:textSize="@dimen/activity_small_size"
-        android:id="@+id/text_view_news_time"/>
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:id="@+id/image_favorite_icon_yellow"
+            android:src="@drawable/favoriteyellow"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_top_margin"
+            android:orientation="horizontal"
+            android:background="@drawable/edittextstyl">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorGray"
+                android:text="Test"
+                android:gravity="left"
+                android:textSize="@dimen/activity_small_size"
+                android:id="@+id/text_view_news_time"/>
+        </LinearLayout>
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

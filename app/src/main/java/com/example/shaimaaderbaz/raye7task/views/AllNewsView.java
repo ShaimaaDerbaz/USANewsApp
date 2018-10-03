@@ -13,6 +13,5 @@ import java.util.List;
 
 public interface AllNewsView {
     void showNewsInfo(List<Article> allArticles);
-    void showNewsFavoriteInfo(Cursor c);
 
 }

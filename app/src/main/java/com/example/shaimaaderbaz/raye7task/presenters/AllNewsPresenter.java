@@ -13,6 +13,7 @@ public interface AllNewsPresenter {
     void retrieveNewsDataFromServer();
     void retrieveFavoriteNewsDataFromDatabase(Context mContext);
     void addNewsFavorieDataToDatabase(Article article ,Context mContext);
+    void DeleteNewsFavorieDataToDatabase(int id ,Context mContext);
 
 }
 

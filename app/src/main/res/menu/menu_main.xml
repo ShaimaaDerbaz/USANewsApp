@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.shaimaaderbaz.raye7task.activities.AllNewsActivity">
+    <item
+        android:id="@+id/action_all_news"
+        android:orderInCategory="100"
+        android:title="@string/action_all_news"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_favorite_news"
+        android:orderInCategory="100"
+        android:title="@string/action_favorite_news"
+        app:showAsAction="never" />
+</menu>

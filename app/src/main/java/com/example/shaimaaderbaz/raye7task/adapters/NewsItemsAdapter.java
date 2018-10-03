@@ -30,7 +30,8 @@ public class NewsItemsAdapter extends RecyclerView.Adapter<NewsItemsAdapter.View
     private static Context context;
     private NewsItemsAdapterListener mNewsItemsAdapterListener;
     public interface NewsItemsAdapterListener {
-        void onItemClicked(int id);
+        void onItemClicked(int id,Article clickedItem );
+        void onItemClickedLong(int adapterPos,Article clickedItem);
 
     }
 
@@ -46,7 +47,7 @@ public class NewsItemsAdapter extends RecyclerView.Adapter<NewsItemsAdapter.View
         @BindView(R.id.text_view_news_time)TextView news_time;
         @BindView(R.id.text_view_news_title)TextView news_title;
         @BindView(R.id.image_view_news_image)ImageView news_image;
-
+        @BindView(R.id.image_favorite_icon_yellow) ImageView image_favorite_icon_yellow;
 
 
         public ViewHolder(View v)
@@ -60,10 +61,24 @@ public class NewsItemsAdapter extends RecyclerView.Adapter<NewsItemsAdapter.View
                     Log.d(TAG, "Element " + getAdapterPosition() + " clicked.");
                     if(mNewsItemsAdapterListener != null){
                         Article clickedItem = DataSet.get(getAdapterPosition());
-                        mNewsItemsAdapterListener.onItemClicked(getAdapterPosition());
+                        mNewsItemsAdapterListener.onItemClicked(getAdapterPosition(),clickedItem);
 
                     }
 
+                }
+            });
+
+            v.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    Log.d(TAG, "Element " + getAdapterPosition() + " clicked.");
+                    if(mNewsItemsAdapterListener != null){
+                        Article clickedItem = DataSet.get(getAdapterPosition());
+                        mNewsItemsAdapterListener.onItemClickedLong(getAdapterPosition(),clickedItem);
+                        image_favorite_icon_yellow.setVisibility(View.VISIBLE);
+
+                    }
+                    return false;
                 }
             });
 
@@ -113,14 +128,15 @@ public class NewsItemsAdapter extends RecyclerView.Adapter<NewsItemsAdapter.View
             Log.d("", "Element " + position + " set.");
             holder.getNews_time().setText(DataSet.get(position).getPublishedAt());
             holder.getNews_title().setText(DataSet.get(position).getTitle());
-            try {
-                Picasso.with(context).load(DataSet.get(position).getUrlToImage()).resize(120,120).into(holder.news_image);
+            String imageUrl=DataSet.get(position).getUrlToImage();
+            if(imageUrl!=null)
+            {
+                Picasso.with(context).load(imageUrl).resize(120,120).into(holder.news_image);
             }
-
-            catch(Exception e)
+            else
             {
                 String  placholderImage="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552";
-                Picasso.with(context).load(placholderImage).resize(120,120).into(holder.news_image);
+                Picasso.with(context).load(placholderImage).resize(360,360).into(holder.news_image);
 
             }
 

@@ -26,8 +26,9 @@ import java.util.List;
 public class AllNewsPresenterImp implements AllNewsPresenter {
 
     private AllNewsView allNewsView;
-    public AllNewsPresenterImp(Context context)
+    public AllNewsPresenterImp(AllNewsView allNewsView)
     {
+
         this.allNewsView=allNewsView;
     }
      AllNewsCall presenterCallback =new AllNewsCall()
@@ -60,6 +61,11 @@ public class AllNewsPresenterImp implements AllNewsPresenter {
         values.put(FavoriteContract.FavoriteEntry.COLUMN_IMAGE_UrL,article.getUrlToImage());
 
         Uri newUri = mContext.getContentResolver().insert(FavoriteContract.FavoriteEntry.CONTENT_URI, values);
+
+    }
+    @Override
+    public void DeleteNewsFavorieDataToDatabase(int id ,Context mContext)
+    {
 
     }
     @Override

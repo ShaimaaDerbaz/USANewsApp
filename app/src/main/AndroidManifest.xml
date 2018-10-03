@@ -17,8 +17,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".activities.AllNewsActivity"></activity>
+        <activity android:name=".activities.AllNewsActivity"
+        >
+
+        </activity>
         <provider android:name=".data.FavoriteProvider" android:authorities="com.example.shaimaaderbaz.raye7task"
             android:exported="false">
         </provider>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Raye7Task</string>
+    <string name="action_all_news">All News</string>
+    <string name="action_favorite_news">Favorite News</string>
 </resources>
