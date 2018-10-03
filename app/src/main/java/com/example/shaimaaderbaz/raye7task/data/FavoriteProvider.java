@@ -11,7 +11,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 /**
- * Created by Shaimaa Derbaz on 2/7/2018.
+ * Created by Shaimaa Derbaz on 10/2/2018.
  */
 
 public class FavoriteProvider extends ContentProvider {
